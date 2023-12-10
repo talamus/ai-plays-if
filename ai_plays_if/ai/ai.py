@@ -57,6 +57,10 @@ class AI:
         for line in commands.split("\n"):
             if not line.endswith(":") and re.search(r"\w+", line):
 
+                match = re.search(r"^You: ", line)
+                if match:
+                    line = line.removeprefix(match[0])
+
                 match = re.search(r"^\s*\w\)\s+", line)
                 if match:
                     line = line.removeprefix(match[0])
