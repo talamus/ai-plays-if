@@ -1,0 +1,8 @@
+{
+    "python.terminal.activateEnvironment": true,
+    "workbench.colorCustomizations": {
+        "activityBar.background": "#380d0d",
+        "titleBar.activeBackground": "#511111",
+        "titleBar.activeForeground": "#feefef"
+    }
+}

@@ -1,0 +1,26 @@
+[tool.poetry]
+name = "ai_plays_if"
+version = "0.0.0"
+description = ""
+authors = ["Tero Niemi <talamus@gmail.com>"]
+license = "MIT"
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.10"
+pexpect = "^4.9.0"
+pyyaml = "^6.0.1"
+colorama = "^0.4.6"
+python-json-logger = "^2.0.7"
+transformers = "^4.35.2"
+accelerate = "^0.25.0"
+sentencepiece = "^0.1.99"
+protobuf = "^4.25.1"
+
+[tool.poetry.group.dev.dependencies]
+black = "^23.11.0"
+light-the-torch = "^0.7.5"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
