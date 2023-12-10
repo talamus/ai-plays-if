@@ -1,3 +1,4 @@
+import re
 import logging
 import random
 from typing import Any
@@ -52,14 +53,18 @@ class AI:
         result = "".join(map(lambda x: x["generated_text"], sequences))
         commands = result.split(self.separator)[1].strip().replace("\n\n", "\n")
 
-        # If we are given a list, parse it and choose randomly
         choices = []
-        if "\n- " in commands:
-            for line in commands.split("\n"):
-                if line.startswith("- "):
-                    choices.append(line.removeprefix("- ").strip())
-        else:
-            for line in commands.split("\n"):
-                if not line.endswith(":"):
-                    choices.append(line)
+        for line in commands.split("\n"):
+            if not line.endswith(":") and re.search(r"\w+", line):
+
+                match = re.search(r"^\s*\w\)\s+", line)
+                if match:
+                    line = line.removeprefix(match[0])
+
+                match = re.search(r"^\s*-\s+", line)
+                if match:
+                    line = line.removeprefix(match[0])
+
+                choices.append(line)
+
         return random.choice(choices)

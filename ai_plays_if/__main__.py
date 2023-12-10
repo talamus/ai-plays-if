@@ -39,6 +39,7 @@ argparser = argparse.ArgumentParser(
 argparser.add_argument(
     "story_file",
     metavar="story.dat",
+    nargs="?",
     help="story that our AI will try to play",
 )
 argparser.add_argument(
@@ -76,6 +77,8 @@ args = vars(argparser.parse_args())
 args["verbosity"] = args["verbosity"] + 2
 
 # Remove arguments that are not set
+if not args["story_file"]:
+    del args["story_file"]
 if not args["log_level"]:
     del args["log_level"]
 

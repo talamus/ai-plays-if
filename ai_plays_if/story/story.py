@@ -22,6 +22,9 @@ class Story:
             `story_file`: The Z-Machine data file to be executed.
         """
 
+        if "story_file" not in cfg:
+            raise FileNotFoundError(f"No story.dat provided. Run with --help for help.")
+
         log = logging.getLogger(__name__)
         mojozork_path = str(importlib.resources.files(__package__) / "bin" / "mojozork")
         log.debug(
