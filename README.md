@@ -1,7 +1,8 @@
 # AI plays Interactive Fiction
 
-Load a Large Language Model and make it play classical Infocom Interactive Fiction. Games not included.
+Load a Large Language Model and make it play a classical Infocom text adventure game (a.k.a interactive fiction).
 
-The Interactive Fiction engine used is [MojoZork](https://github.com/icculus/mojozork).
+* The Z-Machine engine used is [MojoZork](https://github.com/icculus/mojozork).
+* For games see [The Historical Source](https://github.com/historicalsource/).
 
-(This is just a fun test project for learning LLM prompting and handling.)
+(This is just a fun test project for learning about LLM prompting and handling stuff...)
